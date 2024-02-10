@@ -11,6 +11,16 @@ const ItemDetailContainer = () => {
 
     const { id } = useParams()
 
+    const {showNotification} =useNotification()
+
+    useEffect(() => {
+        if(product) document.title = product.name
+        
+        return () => {
+            document.title = 'Ecommerce'
+        }
+    })
+
     useEffect(() => {
         setLoading(true)
 
