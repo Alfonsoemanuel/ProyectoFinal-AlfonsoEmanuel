@@ -28,7 +28,7 @@ const ItemListContainer = ({ greeting}) => {
         ? query(collection(db, 'products'), where('category','==', categoryId))
         : collection(db, 'products')
 
-        getDoc(productsCollection)
+        getDocs(productsCollection)
             .then(querySnapshot => {
                 const productAdapted = querySnapshot.docs.map(doc=> {
                     const fields = doc.data()

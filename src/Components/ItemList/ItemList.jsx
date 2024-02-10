@@ -4,9 +4,9 @@ const ItemList = ({ products }) => {
     return (
         <div style={{ display: 'flex', flexDirection: 'row'}}>
             {
-                products.map(prod => {
+                products.map(product => {
                     return (
-                        <Item key={prod.id} {...prod}/>
+                        <Item key={product.id} {...product}/>
                     )
                 })
             }

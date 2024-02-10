@@ -2,7 +2,7 @@ import NavBar from './Components/NavBar/NavBar'
 import { BrowserRouter, Routes , Route} from 'react-router-dom'
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer'
-import { CartProvider } from './Contenxt/CartContenxt'
+import { CartProvider } from './context/CartContext'
 import { NotificationProvider } from './Components/notification/NotificationService'
 function App() {
 
