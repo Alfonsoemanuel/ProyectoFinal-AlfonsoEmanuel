@@ -12,8 +12,17 @@ const ItemListContainer = ({ greeting}) => {
 
     const { categoryId } = useParams()
 
+    const { showNotification } = useNotification()
+
     useEffect(() => {
-        setLoading(true)
+        if(categoryId) document.title = 'Ecommerce: ' + categoryId 
+        return () => {
+            document.title = 'Ecommerce'
+        }
+    })
+
+    useEffect(() => {
+        setProducts(true)
 
         const productsCollection = categoryId
         ? query(collection(db, 'products'), where('category','==', categoryId))
@@ -31,7 +40,7 @@ const ItemListContainer = ({ greeting}) => {
                     showNotification('error', 'hubo un error')
                 })
                 .finally(() => {
-                    setLoading(false)
+                    setProducts(false)
                 })
 /*(asyncmock)        const asyncFunction = categoryId ? getProductByCategory : getProducts
     
